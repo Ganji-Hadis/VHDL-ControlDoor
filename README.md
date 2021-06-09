@@ -31,34 +31,34 @@
 				      	if(entBtm = '1' and counter < 15 ) then
 					       	open_door <= '1' ;
 					       	person <= person + 1 ;
-						       counter <= person ;
-					      end if;
-					      if(entBtm = '1' and counter = 15 ) then
-					        	open_door <= '0' ;
+						counter <= person ;
+					 end if;
+					 if(entBtm = '1' and counter = 15 ) then
+					       open_door <= '0' ;
 				      	end if;	
 				     end if;
 			
 			
 				    if(outDoorSensor = '1') then
 				      	if(extBtm = '1' and counter > 0) then
-						         person <= person - 1 ;
-						         counter <= person ;
-						         if(counter = 0) then
-					          	 	close_door <= '1' ;
-			      		   	else
-						           	null;
-					         	end if;
+						person <= person - 1 ;
+						counter <= person ;
+						if(counter = 0) then
+					    		close_door <= '1' ;
+			      		 	else
+							null;
+						end if;
 				     	end if;
-		    		end if;
+		    		    end if;
 				
 			
-		  	 end if;
+		  	end if;
 		
-	   else
+	  	 else
 	     	 	counter <= person ;
-	   end if;
-	 else
-		 counter <= 0 ;
+	   	end if;
+	else
+		counter <= 0 ;
  	end if;
 		
  	end process;
